@@ -44,6 +44,14 @@ export const query = graphql`
   }
 `
 
+export async function config() {
+  return ({ params }) => {
+    return {
+      defer: true,
+    }
+  }
+}
+
 export const Head = ({ data }) => <Seo title={data.mdx.frontmatter.title} />
 
 export default BlogPost
